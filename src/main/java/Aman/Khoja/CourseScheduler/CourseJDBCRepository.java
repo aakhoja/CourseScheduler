@@ -13,11 +13,11 @@ public class CourseJDBCRepository {
     private static String INSERT_QUERY =
             """
                     insert into course (id,name,author)
-                    values (1,'SprintBooot','Aman Khoja')
+                    values (?,?,?)
                     
                     """;
 
-    public void insert(){
-        springJdbcTemplate.update(INSERT_QUERY);
+    public void insert(Course course){
+        springJdbcTemplate.update(INSERT_QUERY,course.getId(),course.getName(),course.getAuthor());
     }
 }
