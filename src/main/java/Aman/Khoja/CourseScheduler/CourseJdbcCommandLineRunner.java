@@ -17,6 +17,9 @@ public class CourseJdbcCommandLineRunner implements CommandLineRunner {
         repository.insert(new Course(3,"SwiftUI","Aman Khoja"));
 
         repository.delete(1);
+        System.out.println(repository.findByID(3));
+        System.out.println(repository.findByID(2));
+
 
     }
 
